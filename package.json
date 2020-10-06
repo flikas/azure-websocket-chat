@@ -1,0 +1,14 @@
+{
+  "name": "azure-websocket-chat",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node index.ts",
+    "run": "node index.ts"
+  },
+  "dependencies": {
+    "@types/node": "^14.11.5",
+    "express": "~4.16.1",
+    "socket.io": "^2.3.0"
+  }
+}
