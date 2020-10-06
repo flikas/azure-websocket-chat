@@ -19,6 +19,10 @@ io.on('connection', (socket) => {
     });
 });
 
-http.listen(80, () => {
-    console.log('listening on *:80');
+var port = parseInt(process.env.PORT);
+if (!port) {
+    port = 80;
+}
+http.listen(port, () => {
+    console.log('listening on *:' + port);
 });
