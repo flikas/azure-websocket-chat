@@ -53,6 +53,8 @@
 </head>
 
 <body>
+<h2>This chat room will work if your server supports <a href="https://en.wikipedia.org/wiki/WebSocket">WebSocket.</a>
+</h2>
 <ul id="messages"></ul>
 <form action="">
   <input id="m" autocomplete="off"/>
@@ -62,7 +64,9 @@
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
   $(function () {
-    var socket = io();
+    var socket = io({
+      "transports": ["websocket"]
+    });
     $('form').submit(function (e) {
       e.preventDefault(); // prevents page reloading
       socket.emit('chat message', $('#m').val());
